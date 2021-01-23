@@ -1,0 +1,15 @@
+D:\repository\Курсовой проект\Stepanenko MI Course Project 2021\Stepanenko MI Course Project 2021\bin\Debug\netcoreapp3.1\Stepanenko MI Course Project 2021.exe
+D:\repository\Курсовой проект\Stepanenko MI Course Project 2021\Stepanenko MI Course Project 2021\bin\Debug\netcoreapp3.1\Stepanenko MI Course Project 2021.deps.json
+D:\repository\Курсовой проект\Stepanenko MI Course Project 2021\Stepanenko MI Course Project 2021\bin\Debug\netcoreapp3.1\Stepanenko MI Course Project 2021.runtimeconfig.json
+D:\repository\Курсовой проект\Stepanenko MI Course Project 2021\Stepanenko MI Course Project 2021\bin\Debug\netcoreapp3.1\Stepanenko MI Course Project 2021.runtimeconfig.dev.json
+D:\repository\Курсовой проект\Stepanenko MI Course Project 2021\Stepanenko MI Course Project 2021\bin\Debug\netcoreapp3.1\Stepanenko MI Course Project 2021.dll
+D:\repository\Курсовой проект\Stepanenko MI Course Project 2021\Stepanenko MI Course Project 2021\bin\Debug\netcoreapp3.1\Stepanenko MI Course Project 2021.pdb
+D:\repository\Курсовой проект\Stepanenko MI Course Project 2021\Stepanenko MI Course Project 2021\obj\Debug\netcoreapp3.1\Stepanenko MI Course Project 2021.csprojAssemblyReference.cache
+D:\repository\Курсовой проект\Stepanenko MI Course Project 2021\Stepanenko MI Course Project 2021\obj\Debug\netcoreapp3.1\Stepanenko_MI_Course_Project_2021.Form1.resources
+D:\repository\Курсовой проект\Stepanenko MI Course Project 2021\Stepanenko MI Course Project 2021\obj\Debug\netcoreapp3.1\Stepanenko MI Course Project 2021.csproj.GenerateResource.cache
+D:\repository\Курсовой проект\Stepanenko MI Course Project 2021\Stepanenko MI Course Project 2021\obj\Debug\netcoreapp3.1\Stepanenko MI Course Project 2021.AssemblyInfoInputs.cache
+D:\repository\Курсовой проект\Stepanenko MI Course Project 2021\Stepanenko MI Course Project 2021\obj\Debug\netcoreapp3.1\Stepanenko MI Course Project 2021.AssemblyInfo.cs
+D:\repository\Курсовой проект\Stepanenko MI Course Project 2021\Stepanenko MI Course Project 2021\obj\Debug\netcoreapp3.1\Stepanenko MI Course Project 2021.csproj.CoreCompileInputs.cache
+D:\repository\Курсовой проект\Stepanenko MI Course Project 2021\Stepanenko MI Course Project 2021\obj\Debug\netcoreapp3.1\Stepanenko MI Course Project 2021.dll
+D:\repository\Курсовой проект\Stepanenko MI Course Project 2021\Stepanenko MI Course Project 2021\obj\Debug\netcoreapp3.1\Stepanenko MI Course Project 2021.pdb
+D:\repository\Курсовой проект\Stepanenko MI Course Project 2021\Stepanenko MI Course Project 2021\obj\Debug\netcoreapp3.1\Stepanenko MI Course Project 2021.genruntimeconfig.cache

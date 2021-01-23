@@ -38,8 +38,8 @@ namespace Stepanenko_MI_Course_Project_2021
                 }
             }
             InitializePlayer();
-            InitializeBlock();
             InitializeFinish();
+            InitializeBlock();
             for (int i = 0; i < field.Length; i++)
             {
                 for (int j = 0; j < field.Length; j++)
@@ -66,7 +66,9 @@ namespace Stepanenko_MI_Course_Project_2021
 
         private void InitializeBlock()
         {
-            this.blocks = new Button[field.Length / 2];
+            Random random = new Random();
+            Point checkStartLocation = new Point(0, 0);
+            this.blocks = new Button[field.Length * 2];
             for(int i = 0; i < blocks.Length; i++)
             {
                 blocks[i] = new Button();
@@ -74,11 +76,12 @@ namespace Stepanenko_MI_Course_Project_2021
                 blocks[i].Size = new System.Drawing.Size(25, 25);
                 this.panel1.Controls.Add(blocks[i]);
             }
-            blocks[0].Location = new System.Drawing.Point(0, 50);
-            blocks[1].Location = new System.Drawing.Point(50, 50);
-            blocks[2].Location = new System.Drawing.Point(100, 50);
-            blocks[3].Location = new System.Drawing.Point(50, 0);
-            blocks[4].Location = new System.Drawing.Point(0, 150);
+            blocks[2].Location = new System.Drawing.Point(25, 0);
+
+            for (int i = 0; i < blocks.Length; i++)
+            {
+                blocks[i].Location = new System.Drawing.Point(random.Next(1, field.Length - 1) * 25, random.Next(0, field.Length - 1) * 25);
+            }
         }
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -105,7 +108,7 @@ namespace Stepanenko_MI_Course_Project_2021
         {
             if(finish.Location == player.Location)
             {
-                MessageBox.Show("Вітаю, ви дойшли до фініша");
+                MessageBox.Show("Вітаю, ви дойшли до фініша", "Вітаю!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

@@ -38,6 +38,8 @@ namespace Stepanenko_MI_Course_Project_2021
                 }
             }
             InitializePlayer();
+            InitializeBlock();
+            InitializeFinish();
             for (int i = 0; i < field.Length; i++)
             {
                 for (int j = 0; j < field.Length; j++)
@@ -54,34 +56,172 @@ namespace Stepanenko_MI_Course_Project_2021
             this.panel1.Controls.Add(player);
         }
 
+        private void InitializeFinish()
+        {
+            finish.BackColor = Color.Green;
+            finish.Size = new System.Drawing.Size(25, 25);
+            finish.Location = new System.Drawing.Point(field.Length * 25 - 25, field.Length * 25 - 25);
+            this.panel1.Controls.Add(finish);
+        }
+
+        private void InitializeBlock()
+        {
+            this.blocks = new Button[field.Length / 2];
+            for(int i = 0; i < blocks.Length; i++)
+            {
+                blocks[i] = new Button();
+                blocks[i].BackColor = Color.Black;
+                blocks[i].Size = new System.Drawing.Size(25, 25);
+                this.panel1.Controls.Add(blocks[i]);
+            }
+            blocks[0].Location = new System.Drawing.Point(0, 50);
+            blocks[1].Location = new System.Drawing.Point(50, 50);
+            blocks[2].Location = new System.Drawing.Point(100, 50);
+            blocks[3].Location = new System.Drawing.Point(50, 0);
+            blocks[4].Location = new System.Drawing.Point(0, 150);
+        }
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.W)
             {
-                if(player.Location.Y != 0)
-                {
-                    this.player.Location = new System.Drawing.Point(player.Location.X, player.Location.Y - 25);
-                }
+                MoveUp();
             }
             if (e.KeyCode == Keys.S)
             {
-                if(player.Location.Y != field.Length * 25 - 25)
-                {
-                    this.player.Location = new System.Drawing.Point(player.Location.X, player.Location.Y + 25);
-                }
+                MoveDown();
             }
             if (e.KeyCode == Keys.A)
             {
-                if(player.Location.X != 0)
-                {
-                    this.player.Location = new System.Drawing.Point(player.Location.X - 25, player.Location.Y);
-                }
+                MoveLeft();
             }
             if (e.KeyCode == Keys.D)
             {
-                if(player.Location.X != field.Length * 25 - 25)
+                MoveRight();
+            }
+            IsFinish();
+        }
+
+        private void IsFinish()
+        {
+            if(finish.Location == player.Location)
+            {
+                MessageBox.Show("Вітаю, ви дойшли до фініша");
+            }
+        }
+
+        private void MoveUp()
+        {
+            if (player.Location.Y != 0)
+            {
+                bool isBlocker = false;
+                foreach (Button item in blocks)
+                {
+                    if (player.Location.X == item.Location.X && player.Location.Y - 25 == item.Location.Y)
+                    {
+                        isBlocker = true;
+                    }
+                }
+
+                if (isBlocker == false)
+                {
+                    this.player.Location = new System.Drawing.Point(player.Location.X, player.Location.Y - 25);
+                    counter = 0;
+                }
+                else
+                {
+                    counter++;
+                    if (counter == 3)
+                    {
+                        MessageBox.Show("Перед вами перешкода. Виберіть інший шлях", "Увага!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        counter = 0;
+                    }
+                }
+            }
+        }
+        private void MoveDown()
+        {
+            if (player.Location.Y != field.Length * 25 - 25)
+            {
+                bool isBlocker = false;
+                foreach (Button item in blocks)
+                {
+                    if (player.Location.X == item.Location.X && player.Location.Y + 25 == item.Location.Y)
+                    {
+                        isBlocker = true;
+                    }
+                }
+
+                if (isBlocker == false)
+                {
+                    this.player.Location = new System.Drawing.Point(player.Location.X, player.Location.Y + 25);
+                    counter = 0;
+                }
+                else
+                {
+                    counter++;
+                    if (counter == 3)
+                    {
+                        MessageBox.Show("Перед вами перешкода. Виберіть інший шлях", "Увага!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        counter = 0;
+                    }
+                }
+            }
+        }
+        private void MoveLeft()
+        {
+            if (player.Location.X != 0)
+            {
+                bool isBlocker = false;
+                foreach (Button item in blocks)
+                {
+                    if (player.Location.X - 25 == item.Location.X && player.Location.Y == item.Location.Y)
+                    {
+                        isBlocker = true;
+                    }
+                }
+
+                if (isBlocker == false)
+                {
+                    this.player.Location = new System.Drawing.Point(player.Location.X - 25, player.Location.Y);
+                    counter = 0;
+                }
+                else
+                {
+                    counter++;
+                    if (counter == 3)
+                    {
+                        MessageBox.Show("Перед вами перешкода. Виберіть інший шлях", "Увага!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        counter = 0;
+                    }
+                }
+            }
+        }
+        private void MoveRight()
+        {
+            if (player.Location.X != field.Length * 25 - 25)
+            {
+                bool isBlocker = false;
+                foreach (Button item in blocks)
+                {
+                    if (player.Location.X + 25 == item.Location.X && player.Location.Y == item.Location.Y)
+                    {
+                        isBlocker = true;
+                    }
+                }
+
+                if (isBlocker == false)
                 {
                     this.player.Location = new System.Drawing.Point(player.Location.X + 25, player.Location.Y);
+                    counter = 0;
+                }
+                else
+                {
+                    counter++;
+                    if (counter == 3)
+                    {
+                        MessageBox.Show("Перед вами перешкода. Виберіть інший шлях", "Увага!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        counter = 0;
+                    }
                 }
             }
         }

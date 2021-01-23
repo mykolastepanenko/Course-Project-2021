@@ -87,6 +87,9 @@ namespace Stepanenko_MI_Course_Project_2021
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Button[][] field = new System.Windows.Forms.Button[10][];
         private System.Windows.Forms.Button player = new System.Windows.Forms.Button();
+        private System.Windows.Forms.Button finish = new System.Windows.Forms.Button();
+        private System.Windows.Forms.Button[] blocks;
+        int counter = 0;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
     }

@@ -16,8 +16,48 @@ namespace Stepanenko_MI_Course_Project_2021
         public Form1()
         {
             InitializeComponent();
-            InitializeField();
+            FieldBelowStart();
         }
+
+        public string SetMode
+        {
+            set
+            {
+                mode = value;
+                if(blocks != null)
+                {
+                    for (int i = 0; i < blocks.Length; i++)
+                    {
+                        panel1.Controls.Remove(blocks[i]);
+                    }
+                }
+                for (int i = 0; i < field.Length; i++)
+                {
+                    for (int j = 0; j < field.Length; j++)
+                    {
+                        panel1.Controls.Remove(field[i][j]);
+                    }
+                }
+                    InitializeField();
+            }
+        }
+
+        private void FieldBelowStart()
+        {
+            for (int i = 0; i < field.Length; i++)
+            {
+                this.field[i] = new System.Windows.Forms.Button[30];
+                for (int j = 0; j < field.Length; j++)
+                {
+                    this.field[i][j] = new System.Windows.Forms.Button();
+                    this.field[i][j].Location = new System.Drawing.Point(i * 25, j * 25);
+                    this.field[i][j].Name = "arr" + i + j;
+                    this.field[i][j].Size = new System.Drawing.Size(25, 25);
+                    this.panel1.Controls.Add(this.field[i][j]);
+                }
+            }
+        }
+
         private void InitializeField()
         {
             for (int i = 0; i < field.Length; i++)
@@ -26,15 +66,10 @@ namespace Stepanenko_MI_Course_Project_2021
                 for (int j = 0; j < field.Length; j++)
                 {
                     this.field[i][j] = new System.Windows.Forms.Button();
-                }
-            }
-            for (int i = 0; i < field.Length; i++)
-            {
-                for (int j = 0; j < field.Length; j++)
-                {
                     this.field[i][j].Location = new System.Drawing.Point(i * 25, j * 25);
                     this.field[i][j].Name = "arr" + i + j;
                     this.field[i][j].Size = new System.Drawing.Size(25, 25);
+
                 }
             }
             InitializePlayer();
@@ -44,7 +79,7 @@ namespace Stepanenko_MI_Course_Project_2021
             {
                 for (int j = 0; j < field.Length; j++)
                 {
-                    this.panel1.Controls.Add(this.field[i][j]);
+                    this.panel1.Controls.Add(field[i][j]);
                 }
             }
         }
@@ -68,38 +103,48 @@ namespace Stepanenko_MI_Course_Project_2021
         {
             Random random = new Random();
             Point checkStartLocation = new Point(0, 0);
-            this.blocks = new Button[field.Length * 2];
-            for(int i = 0; i < blocks.Length; i++)
+            this.blocks = new Button[field.Length];
+            if (mode == "easy")
+            {
+                this.blocks = new Button[field.Length];
+            }
+            else if(mode == "normal")
+            {
+                this.blocks = new Button[field.Length * 2];
+            }
+            else if(mode == "hard")
+            {
+                this.blocks = new Button[field.Length * 4];
+            }
+            for (int i = 0; i < blocks.Length; i++)
             {
                 blocks[i] = new Button();
                 blocks[i].BackColor = Color.Black;
                 blocks[i].Size = new System.Drawing.Size(25, 25);
-                this.panel1.Controls.Add(blocks[i]);
-            }
-            blocks[2].Location = new System.Drawing.Point(25, 0);
-
-            for (int i = 0; i < blocks.Length; i++)
-            {
                 blocks[i].Location = new System.Drawing.Point(random.Next(1, field.Length - 1) * 25, random.Next(0, field.Length - 1) * 25);
+                this.panel1.Controls.Add(blocks[i]);
             }
         }
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.W)
+            if(playDone == false)
             {
-                MoveUp();
-            }
-            if (e.KeyCode == Keys.S)
-            {
-                MoveDown();
-            }
-            if (e.KeyCode == Keys.A)
-            {
-                MoveLeft();
-            }
-            if (e.KeyCode == Keys.D)
-            {
-                MoveRight();
+                if (e.KeyCode == Keys.W)
+                {
+                    MoveUp();
+                }
+                if (e.KeyCode == Keys.S)
+                {
+                    MoveDown();
+                }
+                if (e.KeyCode == Keys.A)
+                {
+                    MoveLeft();
+                }
+                if (e.KeyCode == Keys.D)
+                {
+                    MoveRight();
+                }
             }
             IsFinish();
         }
@@ -108,6 +153,7 @@ namespace Stepanenko_MI_Course_Project_2021
         {
             if(finish.Location == player.Location)
             {
+                playDone = true;
                 MessageBox.Show("Вітаю, ви дойшли до фініша", "Вітаю!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -226,6 +272,22 @@ namespace Stepanenko_MI_Course_Project_2021
                         counter = 0;
                     }
                 }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Button btn = blocks[0];
+            //panel1.Controls.Remove(blocks[0]);
+            //panel1.Controls.Add(btn);
+            //panel1.SuspendLayout();
+            //btn.BackColor = Color.Violet;
+            //MessageBox.Show(btn.Location.ToString());
+            //panel1.Update();
+            Random random = new Random();
+            for(int i = 0; i < blocks.Length; i++)
+            {
+                blocks[i].Location = blocks[i].Location = new System.Drawing.Point(random.Next(1, field.Length - 1) * 25, random.Next(0, field.Length - 1) * 25);
             }
         }
     }

@@ -16,7 +16,7 @@ namespace Stepanenko_MI_Course_Project_2021
         public Form1()
         {
             InitializeComponent();
-            FieldBelowStart();
+            InitializeField();
         }
 
         public string SetMode
@@ -24,13 +24,6 @@ namespace Stepanenko_MI_Course_Project_2021
             set
             {
                 mode = value;
-                if(blocks != null)
-                {
-                    for (int i = 0; i < blocks.Length; i++)
-                    {
-                        panel1.Controls.Remove(blocks[i]);
-                    }
-                }
                 for (int i = 0; i < field.Length; i++)
                 {
                     for (int j = 0; j < field.Length; j++)
@@ -60,6 +53,13 @@ namespace Stepanenko_MI_Course_Project_2021
 
         private void InitializeField()
         {
+            if (blocks != null)
+            {
+                for (int i = 0; i < blocks.Length; i++)
+                {
+                    panel1.Controls.Remove(blocks[i]);
+                }
+            }
             for (int i = 0; i < field.Length; i++)
             {
                 this.field[i] = new System.Windows.Forms.Button[30];

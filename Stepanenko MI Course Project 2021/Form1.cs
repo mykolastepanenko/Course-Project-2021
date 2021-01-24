@@ -116,13 +116,25 @@ namespace Stepanenko_MI_Course_Project_2021
             {
                 this.blocks = new Button[field.Length * 4];
             }
-            for (int i = 0; i < blocks.Length; i++)
-            {
-                blocks[i] = new Button();
-                blocks[i].BackColor = Color.Black;
-                blocks[i].Size = new System.Drawing.Size(25, 25);
-                blocks[i].Location = new System.Drawing.Point(random.Next(1, field.Length - 1) * 25, random.Next(0, field.Length - 1) * 25);
-                this.panel1.Controls.Add(blocks[i]);
+            if(random.Next(0,2) == 0){
+                for (int i = 0; i < blocks.Length; i++)
+                {
+                    blocks[i] = new Button();
+                    blocks[i].BackColor = Color.Black;
+                    blocks[i].Size = new System.Drawing.Size(25, 25);
+                    blocks[i].Location = new System.Drawing.Point(random.Next(1, field.Length - 1) * 25, random.Next(0, field.Length - 1) * 25);
+                    this.panel1.Controls.Add(blocks[i]);
+                }
+            }
+            else {
+                for (int i = 0; i < blocks.Length; i++)
+                {
+                    blocks[i] = new Button();
+                    blocks[i].BackColor = Color.Black;
+                    blocks[i].Size = new System.Drawing.Size(25, 25);
+                    blocks[i].Location = new System.Drawing.Point(random.Next(0, field.Length - 1) * 25, random.Next(1, field.Length - 1) * 25);
+                    this.panel1.Controls.Add(blocks[i]);
+                }
             }
         }
         private void Form1_KeyDown(object sender, KeyEventArgs e)

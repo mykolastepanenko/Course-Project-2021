@@ -13,3 +13,4 @@ D:\repository\Курсовой проект\Stepanenko MI Course Project 2021\St
 D:\repository\Курсовой проект\Stepanenko MI Course Project 2021\Stepanenko MI Course Project 2021\obj\Debug\netcoreapp3.1\Stepanenko MI Course Project 2021.dll
 D:\repository\Курсовой проект\Stepanenko MI Course Project 2021\Stepanenko MI Course Project 2021\obj\Debug\netcoreapp3.1\Stepanenko MI Course Project 2021.pdb
 D:\repository\Курсовой проект\Stepanenko MI Course Project 2021\Stepanenko MI Course Project 2021\obj\Debug\netcoreapp3.1\Stepanenko MI Course Project 2021.genruntimeconfig.cache
+D:\repository\Курсовой проект\Stepanenko MI Course Project 2021\Stepanenko MI Course Project 2021\obj\Debug\netcoreapp3.1\Stepanenko_MI_Course_Project_2021.Mode.resources

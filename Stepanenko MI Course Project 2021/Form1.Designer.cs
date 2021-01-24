@@ -31,6 +31,7 @@ namespace Stepanenko_MI_Course_Project_2021
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.modeElement = new Stepanenko_MI_Course_Project_2021.Mode();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -48,14 +49,22 @@ namespace Stepanenko_MI_Course_Project_2021
             this.panel1.AutoScroll = true;
             this.panel1.Location = new System.Drawing.Point(12, 44);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(950, 432);
+            this.panel1.Size = new System.Drawing.Size(533, 358);
             this.panel1.TabIndex = 3;
+            // 
+            // modeElement
+            // 
+            this.modeElement.Location = new System.Drawing.Point(588, 44);
+            this.modeElement.Name = "modeElement";
+            this.modeElement.Size = new System.Drawing.Size(343, 244);
+            this.modeElement.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(974, 488);
+            this.Controls.Add(this.modeElement);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.KeyPreview = true;
@@ -74,8 +83,11 @@ namespace Stepanenko_MI_Course_Project_2021
         private System.Windows.Forms.Button player = new System.Windows.Forms.Button();
         private System.Windows.Forms.Button finish = new System.Windows.Forms.Button();
         private System.Windows.Forms.Button[] blocks;
-        int counter = 0;
+        private int counter = 0;
+        private string mode;
+        private bool playDone = false;
         private System.Windows.Forms.Panel panel1;
+        private Mode modeElement;
     }
 }
 

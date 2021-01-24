@@ -274,21 +274,5 @@ namespace Stepanenko_MI_Course_Project_2021
                 }
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //Button btn = blocks[0];
-            //panel1.Controls.Remove(blocks[0]);
-            //panel1.Controls.Add(btn);
-            //panel1.SuspendLayout();
-            //btn.BackColor = Color.Violet;
-            //MessageBox.Show(btn.Location.ToString());
-            //panel1.Update();
-            Random random = new Random();
-            for(int i = 0; i < blocks.Length; i++)
-            {
-                blocks[i].Location = blocks[i].Location = new System.Drawing.Point(random.Next(1, field.Length - 1) * 25, random.Next(0, field.Length - 1) * 25);
-            }
-        }
     }
 }

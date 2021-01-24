@@ -30,8 +30,6 @@ namespace Stepanenko_MI_Course_Project_2021
             {
                 parent.SetMode = "hard";
             }
-            //parent.InitializeField();
-            
         }
     }
 }

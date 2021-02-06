@@ -15,6 +15,7 @@ namespace Stepanenko_MI_Course_Project_2021
         int[] playerLocation = new int[2];
         public Form1()
         {
+            mode = "easy";
             InitializeComponent();
             InitializeField();
         }
@@ -165,8 +166,29 @@ namespace Stepanenko_MI_Course_Project_2021
         {
             if(finish.Location == player.Location)
             {
-                playDone = true;
-                MessageBox.Show("Вітаю, ви дойшли до фініша", "Вітаю!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //playDone = true;
+                if(mode == "hard")
+                {
+                    MessageBox.Show("Вітаю, ви дойшли до фініша. Ви пройшли насйкладніший рівень.", "Вітаю!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Вітаю, ви дойшли до фініша. Рівень складності буде підвищено", "Вітаю!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                player.Location = new Point(0, 0);
+                switch (mode)
+                {
+                    case "easy":
+                        modeElement.setChildMode = "normal";
+                        break;
+                    case "normal":
+                        modeElement.setChildMode = "hard";
+                        break;
+                    case "hard":
+                        modeElement.setChildMode = "hard";
+                        break;
+                }
+
             }
         }
 

@@ -32,6 +32,7 @@ namespace Stepanenko_MI_Course_Project_2021
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
             this.modeElement = new Stepanenko_MI_Course_Project_2021.Mode();
+            this.info = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -59,11 +60,21 @@ namespace Stepanenko_MI_Course_Project_2021
             this.modeElement.Size = new System.Drawing.Size(343, 244);
             this.modeElement.TabIndex = 4;
             // 
+            // info
+            // 
+            this.info.AutoSize = true;
+            this.info.Location = new System.Drawing.Point(588, 295);
+            this.info.Name = "info";
+            this.info.Size = new System.Drawing.Size(335, 19);
+            this.info.TabIndex = 5;
+            this.info.Text = "Для переміщення використовуйте клавіші w, a, s, d.";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(974, 488);
+            this.Controls.Add(this.info);
             this.Controls.Add(this.modeElement);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -88,6 +99,7 @@ namespace Stepanenko_MI_Course_Project_2021
         private bool playDone = false;
         private System.Windows.Forms.Panel panel1;
         private Mode modeElement;
+        private System.Windows.Forms.Label info;
     }
 }
 

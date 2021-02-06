@@ -15,6 +15,26 @@ namespace Stepanenko_MI_Course_Project_2021
             InitializeComponent();
         }
 
+        public string setChildMode
+        {
+            set
+            {
+                switch (value)
+                {
+                    case "easy":
+                        easyMode.Checked = true;
+                        break;
+                    case "normal":
+                        normalMode.Checked = true;
+                        break;
+                    case "hard":
+                        hardMode.Checked = true;
+                        break;
+                }
+                btn_selectMode_Click(null, null);
+            }
+        }
+
         private void btn_selectMode_Click(object sender, EventArgs e)
         {
             var parent = this.Parent as Form1;

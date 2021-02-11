@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
@@ -38,6 +40,15 @@ namespace Stepanenko_MI_Course_Project_2021
         private void btn_selectMode_Click(object sender, EventArgs e)
         {
             var parent = this.Parent as Form1;
+
+            //Перевірка коректності введених даних
+            if (textBox1.Text == "" || textBox1.Text == " ")
+            {
+                textBox1.Text = "Player";
+                MessageBox.Show("Ви не ввели ім'я гравця. Система вам надає ім'я \"Player\"", "Увага!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            parent.SetPlayerName = textBox1.Text;
+
             if (easyMode.Checked == true)
             {
                 parent.SetMode = "easy";
@@ -50,6 +61,39 @@ namespace Stepanenko_MI_Course_Project_2021
             {
                 parent.SetMode = "hard";
             }
+        }
+
+        private void inputName_Click(object sender, EventArgs e)
+        {
+            string path = Path.GetFullPath("../../../input.txt");
+            if (!File.Exists(path)) { 
+                using (File.Create(path));
+                System.Diagnostics.Process txt = new System.Diagnostics.Process();
+                txt.StartInfo.FileName = "notepad.exe";
+                txt.StartInfo.Arguments = path;
+                txt.Start();
+            }
+            try
+            {
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    textBox1.Text = sr.ReadLine();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void openFile_Click(object sender, EventArgs e)
+        {
+            string path = Path.GetFullPath("../../../input.txt");
+            if (!File.Exists(path)) { using (File.Create(path)) ; }
+            System.Diagnostics.Process txt = new System.Diagnostics.Process();
+            txt.StartInfo.FileName = "notepad.exe";
+            txt.StartInfo.Arguments = path;
+            txt.Start();
         }
     }
 }

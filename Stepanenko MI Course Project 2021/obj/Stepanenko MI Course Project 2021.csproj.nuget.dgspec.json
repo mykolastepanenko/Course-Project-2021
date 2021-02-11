@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\repository\\Курсовой проект\\Stepanenko MI Course Project 2021\\Stepanenko MI Course Project 2021\\Stepanenko MI Course Project 2021.csproj": {}
+    "D:\\Course-Project-2021\\Stepanenko MI Course Project 2021\\Stepanenko MI Course Project 2021.csproj": {}
   },
   "projects": {
-    "D:\\repository\\Курсовой проект\\Stepanenko MI Course Project 2021\\Stepanenko MI Course Project 2021\\Stepanenko MI Course Project 2021.csproj": {
+    "D:\\Course-Project-2021\\Stepanenko MI Course Project 2021\\Stepanenko MI Course Project 2021.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\repository\\Курсовой проект\\Stepanenko MI Course Project 2021\\Stepanenko MI Course Project 2021\\Stepanenko MI Course Project 2021.csproj",
+        "projectUniqueName": "D:\\Course-Project-2021\\Stepanenko MI Course Project 2021\\Stepanenko MI Course Project 2021.csproj",
         "projectName": "Stepanenko MI Course Project 2021",
-        "projectPath": "D:\\repository\\Курсовой проект\\Stepanenko MI Course Project 2021\\Stepanenko MI Course Project 2021\\Stepanenko MI Course Project 2021.csproj",
+        "projectPath": "D:\\Course-Project-2021\\Stepanenko MI Course Project 2021\\Stepanenko MI Course Project 2021.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "D:\\repository\\Курсовой проект\\Stepanenko MI Course Project 2021\\Stepanenko MI Course Project 2021\\obj\\",
+        "outputPath": "D:\\Course-Project-2021\\Stepanenko MI Course Project 2021\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

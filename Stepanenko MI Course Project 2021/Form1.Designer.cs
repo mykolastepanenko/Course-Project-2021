@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace Stepanenko_MI_Course_Project_2021
 {
     partial class Form1
@@ -31,8 +33,9 @@ namespace Stepanenko_MI_Course_Project_2021
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.modeElement = new Stepanenko_MI_Course_Project_2021.Mode();
             this.info = new System.Windows.Forms.Label();
+            this.mode1 = new Stepanenko_MI_Course_Project_2021.Mode();
+            this.result1 = new Stepanenko_MI_Course_Project_2021.Result();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -41,7 +44,7 @@ namespace Stepanenko_MI_Course_Project_2021
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(18, 18);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(974, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1358, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -53,29 +56,37 @@ namespace Stepanenko_MI_Course_Project_2021
             this.panel1.Size = new System.Drawing.Size(533, 358);
             this.panel1.TabIndex = 3;
             // 
-            // modeElement
-            // 
-            this.modeElement.Location = new System.Drawing.Point(588, 44);
-            this.modeElement.Name = "modeElement";
-            this.modeElement.Size = new System.Drawing.Size(343, 244);
-            this.modeElement.TabIndex = 4;
-            // 
             // info
             // 
             this.info.AutoSize = true;
-            this.info.Location = new System.Drawing.Point(588, 295);
+            this.info.Location = new System.Drawing.Point(596, 460);
             this.info.Name = "info";
             this.info.Size = new System.Drawing.Size(335, 19);
             this.info.TabIndex = 5;
             this.info.Text = "Для переміщення використовуйте клавіші w, a, s, d.";
             // 
+            // mode1
+            // 
+            this.mode1.Location = new System.Drawing.Point(596, 44);
+            this.mode1.Name = "mode1";
+            this.mode1.Size = new System.Drawing.Size(343, 413);
+            this.mode1.TabIndex = 6;
+            // 
+            // result1
+            // 
+            this.result1.Location = new System.Drawing.Point(956, 44);
+            this.result1.Name = "result1";
+            this.result1.Size = new System.Drawing.Size(390, 413);
+            this.result1.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 488);
+            this.ClientSize = new System.Drawing.Size(1358, 488);
+            this.Controls.Add(this.result1);
+            this.Controls.Add(this.mode1);
             this.Controls.Add(this.info);
-            this.Controls.Add(this.modeElement);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.KeyPreview = true;
@@ -96,10 +107,17 @@ namespace Stepanenko_MI_Course_Project_2021
         private System.Windows.Forms.Button[] blocks;
         private int counter = 0;
         private string mode;
-        private bool playDone = false;
+        private bool isStart;
+        private bool isFinish;
         private System.Windows.Forms.Panel panel1;
         private Mode modeElement;
         private System.Windows.Forms.Label info;
+        private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+        private DateTime score;
+        private DateTime timeStart;
+        private DateTime timeFinish;
+        private Mode mode1;
+        private Result result1;
     }
 }
 

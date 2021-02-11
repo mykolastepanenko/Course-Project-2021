@@ -7,17 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
+using System.IO;
 
 namespace Stepanenko_MI_Course_Project_2021
 {
     public partial class Form1 : Form
     {
+        public static string connectString = String.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0}", Path.GetFullPath("../../../database.mdb"));
         int[] playerLocation = new int[2];
         public Form1()
         {
+            isStart = false;
+            isFinish = false;
+            player.Name = "Player";
             mode = "easy";
             InitializeComponent();
-            InitializeField();
+            //InitializeField();
         }
 
         public string SetMode
@@ -25,14 +31,35 @@ namespace Stepanenko_MI_Course_Project_2021
             set
             {
                 mode = value;
-                for (int i = 0; i < field.Length; i++)
+                if (panel1.Controls.Count != 0)
                 {
-                    for (int j = 0; j < field.Length; j++)
+                    for (int i = 0; i < field.Length; i++)
                     {
-                        panel1.Controls.Remove(field[i][j]);
+                        for (int j = 0; j < field.Length; j++)
+                        {
+                            panel1.Controls.Remove(field[i][j]);
+                        }
                     }
                 }
-                    InitializeField();
+                InitializeField();
+                isStart = true;
+                isFinish = false;
+            }
+            get
+            {
+                return mode;
+            }
+        }
+
+        public string SetPlayerName
+        {
+            set
+            {
+                player.Name = value;
+            }
+            get
+            {
+                return player.Name;
             }
         }
 
@@ -102,6 +129,7 @@ namespace Stepanenko_MI_Course_Project_2021
 
         private void InitializeBlock()
         {
+            RunTimer();
             Random random = new Random();
             Point checkStartLocation = new Point(0, 0);
             this.blocks = new Button[field.Length];
@@ -140,7 +168,7 @@ namespace Stepanenko_MI_Course_Project_2021
         }
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if(playDone == false)
+            if(isStart == true)
             {
                 if (e.KeyCode == Keys.W)
                 {
@@ -158,37 +186,75 @@ namespace Stepanenko_MI_Course_Project_2021
                 {
                     MoveRight();
                 }
+                IsFinish();
             }
-            IsFinish();
+            else
+            {
+                if(e.KeyCode == Keys.W || e.KeyCode == Keys.S || e.KeyCode == Keys.A || e.KeyCode == Keys.D)
+                {
+                    writeAfterFinish();
+                }
+            }
+        }
+
+        private void writeAfterFinish()
+        {
+            if (isFinish == true)
+            {
+                counter++;
+                if (counter == 5)
+                {
+                    if (MessageBox.Show("Розпочати нову гру?", "Повідомлення", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        SetMode = mode;
+                    }
+                    counter = 0;
+                }
+            }
         }
 
         private void IsFinish()
         {
             if(finish.Location == player.Location)
             {
-                //playDone = true;
-                if(mode == "hard")
+                StopTimer();
+                isStart = false;
+                isFinish = true;
+                if (mode == "hard")
                 {
                     MessageBox.Show("Вітаю, ви дойшли до фініша. Ви пройшли насйкладніший рівень.", "Вітаю!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Вітаю, ви дойшли до фініша. Рівень складності буде підвищено", "Вітаю!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Вітаю, ви дойшли до фініша! Ваш час " + result1.SetScore, "Вітаю!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                player.Location = new Point(0, 0);
-                switch (mode)
-                {
-                    case "easy":
-                        modeElement.setChildMode = "normal";
-                        break;
-                    case "normal":
-                        modeElement.setChildMode = "hard";
-                        break;
-                    case "hard":
-                        modeElement.setChildMode = "hard";
-                        break;
-                }
-
+                //switch (mode)
+                //{
+                //    case "easy":
+                //        modeElement.setChildMode = "normal";
+                //        break;
+                //    case "normal":
+                //        modeElement.setChildMode = "hard";
+                //        break;
+                //    case "hard":
+                //        modeElement.setChildMode = "hard";
+                //        break;
+                //}
+                //using (OleDbConnection myConnection = new OleDbConnection(connectString))
+                //{
+                //    try
+                //    {
+                //        myConnection.Open();
+                //        string query = String.Format("insert into score (player) values (\"{0}\")", player.Name);
+                //        OleDbCommand command = new OleDbCommand(query, myConnection);
+                //        command.ExecuteNonQuery();
+                //        myConnection.Close();
+                //    }
+                //    catch (Exception ex)
+                //    {
+                //        MessageBox.Show(ex.Message);
+                //    }
+                //}
             }
         }
 
@@ -307,6 +373,23 @@ namespace Stepanenko_MI_Course_Project_2021
                     }
                 }
             }
+        }
+        public void RunTimer()
+        {
+            timeStart = DateTime.Now;
+            timer.Tick += new EventHandler(timer_tick);
+            timer.Interval = 1000;
+            timer.Start();
+        }
+
+        public void StopTimer()
+        {
+            timer.Stop();
+        }
+        private void timer_tick(object sender, EventArgs e)
+        {
+            timeFinish = DateTime.Now;
+            result1.SetScore = timeFinish.Subtract(timeStart).ToString().Substring(0, 8);
         }
     }
 }

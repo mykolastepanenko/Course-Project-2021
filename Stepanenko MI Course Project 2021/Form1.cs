@@ -228,33 +228,6 @@ namespace Stepanenko_MI_Course_Project_2021
                 {
                     MessageBox.Show("Вітаю, ви дойшли до фініша! Ваш час " + result1.SetScore, "Вітаю!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                //switch (mode)
-                //{
-                //    case "easy":
-                //        modeElement.setChildMode = "normal";
-                //        break;
-                //    case "normal":
-                //        modeElement.setChildMode = "hard";
-                //        break;
-                //    case "hard":
-                //        modeElement.setChildMode = "hard";
-                //        break;
-                //}
-                //using (OleDbConnection myConnection = new OleDbConnection(connectString))
-                //{
-                //    try
-                //    {
-                //        myConnection.Open();
-                //        string query = String.Format("insert into score (player) values (\"{0}\")", player.Name);
-                //        OleDbCommand command = new OleDbCommand(query, myConnection);
-                //        command.ExecuteNonQuery();
-                //        myConnection.Close();
-                //    }
-                //    catch (Exception ex)
-                //    {
-                //        MessageBox.Show(ex.Message);
-                //    }
-                //}
             }
         }
 
@@ -390,6 +363,28 @@ namespace Stepanenko_MI_Course_Project_2021
         {
             timeFinish = DateTime.Now;
             result1.SetScore = timeFinish.Subtract(timeStart).ToString().Substring(0, 8);
+        }
+
+        private void CloseProgram(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        private void AuthorName_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Дану роботу створив студент 471 групи Степаненко Миколай Ігорович.\n" +
+                "Перед вами курсовий проект на тему \"Задача про лабіринт\"", 
+                "Автор даної програми", 
+                MessageBoxButtons.OK, 
+                MessageBoxIcon.Information);
+        }
+        private void Helper(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, Path.GetFullPath("../../../help.html"));
+        }
+        private void Instruction_Click(object sender, EventArgs e)
+        {
+            InstructionForm instructionForm = new InstructionForm();
+            instructionForm.Show();
         }
     }
 }

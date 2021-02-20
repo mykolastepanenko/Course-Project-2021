@@ -40,7 +40,6 @@ namespace Stepanenko_MI_Course_Project_2021
         private void btn_selectMode_Click(object sender, EventArgs e)
         {
             var parent = this.Parent as Form1;
-
             //Перевірка коректності введених даних
             if (textBox1.Text == "" || textBox1.Text == " ")
             {

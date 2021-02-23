@@ -49,3 +49,4 @@ F:\Course-Project-2021\Stepanenko MI Course Project 2021\obj\Debug\netcoreapp3.1
 F:\Course-Project-2021\Stepanenko MI Course Project 2021\obj\Debug\netcoreapp3.1\Stepanenko MI Course Project 2021.pdb
 F:\Course-Project-2021\Stepanenko MI Course Project 2021\obj\Debug\netcoreapp3.1\Stepanenko MI Course Project 2021.genruntimeconfig.cache
 D:\Course-Project-2021\Stepanenko MI Course Project 2021\obj\Debug\netcoreapp3.1\Stepanenko_MI_Course_Project_2021.InstructionForm.resources
+D:\Course-Project-2021\Stepanenko MI Course Project 2021\obj\Debug\netcoreapp3.1\Stepanenko_MI_Course_Project_2021.Properties.Resources.resources

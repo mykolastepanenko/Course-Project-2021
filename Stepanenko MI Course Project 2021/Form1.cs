@@ -398,5 +398,10 @@ namespace Stepanenko_MI_Course_Project_2021
         }
         string helpPath = "help.html";
         string helpContext = "<!DOCTYPE html><html lang='en'><head> <meta charset='UTF-8'> <meta name='viewport' content='width=device-width, initial-scale=1.0'> <title>Довідка до курсового проекту Степаненка Миколая Ігоровича</title> <style> h1, h2{ text-align: center; } nav{ width: 100%; margin: auto; line-height: 1.5; } .center { margin: auto; } @media screen and (min-width: 720px){ nav{ width: 50%; margin: auto; } } @media screen and (min-width: 900px){ nav{ width: 35%; margin: auto; } } </style></head><body> <div class='container'> <h1>Довідка програми 'Задача про лабіринт'</h1> <h2>Інструкція користувача</h2> <nav> <ul> <li>Введіть ім'я гравця.</li> <li>За бажанням змініть режим складності.</li> <li>Досягніть фінішу оминаючи перешкоди</li> <li>Для переміщення використовуйте клавіші w,a,s,d.</li> <li>За бажанням збережіть результат у файл.</li> <li>За бажанням розпочніть нову гру.</li> </ul> </nav> <div class='center'> <h2>Інформація про автора програми</h2> <p>Дану роботу створив студент 471 групи Степаненко Миколай Ігорович. Перед вами курсовий проект на тему 'Задача про лабіринт'.</p> </div> </div></body></html>";
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = false;
+        }
     }
 }

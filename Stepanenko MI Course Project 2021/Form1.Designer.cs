@@ -149,7 +149,8 @@ namespace Stepanenko_MI_Course_Project_2021
             // 
             // helpProvider1
             // 
-            this.helpProvider1.HelpNamespace = "D:\\Course-Project-2021\\Stepanenko MI Course Project 2021\\help.html";
+            this.helpProvider1.HelpNamespace = "D:\\Course-Project-2021\\Stepanenko MI Course Project 2021\\bin\\Debug\\netcoreapp3.1\\" +
+    "help.html";
             // 
             // contextMenuStrip1
             // 

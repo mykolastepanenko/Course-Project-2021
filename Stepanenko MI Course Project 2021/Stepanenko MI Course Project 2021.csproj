@@ -5,6 +5,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Stepanenko_MI_Course_Project_2021</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
+    <PackageIcon>icon.png</PackageIcon>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

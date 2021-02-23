@@ -31,7 +31,7 @@ namespace Stepanenko_MI_Course_Project_2021
 
         private void openFile_btn_Click(object sender, EventArgs e)
         {
-            string path = Path.GetFullPath("../../../output.txt");
+            string path = Path.GetFullPath("output.txt");
             if (!File.Exists(path)) { using (File.Create(path)) ; }
             System.Diagnostics.Process txt = new System.Diagnostics.Process();
             txt.StartInfo.FileName = "notepad.exe";
@@ -41,7 +41,7 @@ namespace Stepanenko_MI_Course_Project_2021
 
         private void save_btn_Click(object sender, EventArgs e)
         {
-            string path = Path.GetFullPath("../../../output.txt");
+            string path = Path.GetFullPath("output.txt");
             if (!File.Exists(path)) { using (File.Create(path)) ; }
 
             ////Write text in file

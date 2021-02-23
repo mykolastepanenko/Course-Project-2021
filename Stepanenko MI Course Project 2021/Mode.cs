@@ -64,7 +64,7 @@ namespace Stepanenko_MI_Course_Project_2021
 
         private void inputName_Click(object sender, EventArgs e)
         {
-            string path = Path.GetFullPath("../../../input.txt");
+            string path = Path.GetFullPath("input.txt");
             if (!File.Exists(path)) { 
                 using (File.Create(path));
                 System.Diagnostics.Process txt = new System.Diagnostics.Process();
@@ -87,7 +87,7 @@ namespace Stepanenko_MI_Course_Project_2021
 
         private void openFile_Click(object sender, EventArgs e)
         {
-            string path = Path.GetFullPath("../../../input.txt");
+            string path = Path.GetFullPath("input.txt");
             if (!File.Exists(path)) { using (File.Create(path)) ; }
             System.Diagnostics.Process txt = new System.Diagnostics.Process();
             txt.StartInfo.FileName = "notepad.exe";

@@ -1,0 +1,5 @@
+D:\Course-Project-2021\Stepanenko MI Course Project 2021\bin\Release\netcoreapp3.1\publish\Stepanenko MI Course Project 2021.exe
+D:\Course-Project-2021\Stepanenko MI Course Project 2021\bin\Release\netcoreapp3.1\publish\Stepanenko MI Course Project 2021.dll
+D:\Course-Project-2021\Stepanenko MI Course Project 2021\bin\Release\netcoreapp3.1\publish\Stepanenko MI Course Project 2021.deps.json
+D:\Course-Project-2021\Stepanenko MI Course Project 2021\bin\Release\netcoreapp3.1\publish\Stepanenko MI Course Project 2021.runtimeconfig.json
+D:\Course-Project-2021\Stepanenko MI Course Project 2021\bin\Release\netcoreapp3.1\publish\Stepanenko MI Course Project 2021.pdb
